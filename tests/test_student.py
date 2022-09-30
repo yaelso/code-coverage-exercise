@@ -44,7 +44,19 @@ def test_summary():
 
     assert anne.summary() == "Anne Byron is a senior enrolled in 2 classes"
 
-def test_get_student_with_more_classes():
+def test_get_student_with_more_classes_student_a():
+    charles = Student("Charles Babbage", "senior", ["mechanical engineering", "foundations of computing"])
+    ada = Student(
+        "Ada Lovelace",
+        "sophomore",
+        ["mathematics"]
+    )
+
+    student_with_more_classes = get_student_with_more_classes(charles, ada)
+
+    assert student_with_more_classes == charles   
+
+def test_get_student_with_more_classes_student_b():
     charles = Student("Charles Babbage", "senior", ["mechanical engineering"])
     ada = Student(
         "Ada Lovelace",
